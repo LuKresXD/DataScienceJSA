@@ -58,7 +58,7 @@ def test_unknown_notification_type(client):
     })
     json_data = response.get_json()
     assert response.status_code == 400
-    assert "Unknown notification type" in json_data
+    assert json_data["error"] == "Unknown notification type"
 
 
 if __name__ == "__main__":

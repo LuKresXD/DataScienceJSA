@@ -57,7 +57,7 @@ def send_notification():
         result = notification.send(params)
         return jsonify(result), 200
     except ValueError as e:
-        return jsonify(str(e)), 400
+        return jsonify({"error": str(e)}), 400
 
 
 if __name__ == "__main__":
