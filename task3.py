@@ -60,13 +60,5 @@ def send_notification():
         return jsonify(str(e)), 400
 
 
-with app.test_client() as client:
-    response = client.post('/notifications', json={
-        "type": "EmailNotification",
-        "params": {
-            "email": "test@lurkes.dev",
-            "subject": "Test",
-            "message": "This is a test email."
-        }
-    })
-    print(response.get_json())
+if __name__ == "__main__":
+    app.run(debug=True)
