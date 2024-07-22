@@ -1,13 +1,11 @@
 from flask import Flask, request, jsonify
-import abc
 
 app = Flask(__name__)
 
 
-class Notification(abc.ABC):
-    @abc.abstractmethod
+class Notification:
     def send(self, params):
-        pass
+        raise NotImplementedError("Send method not implemented")
 
 
 class EmailNotification(Notification):
@@ -46,10 +44,6 @@ class NotificationFactory:
             return PushNotification()
         else:
             raise ValueError("Unknown notification type")
-
-
-class NotificationType(enum.Enum):
-    EmailNotification = "Description of email"
 
 
 @app.route('/notifications', methods=['POST'])
