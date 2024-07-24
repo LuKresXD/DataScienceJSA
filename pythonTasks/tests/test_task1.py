@@ -1,5 +1,5 @@
 import pytest
-from task1 import AutoListDict
+from pythonTasks.task1 import AutoListDict
 
 
 def test_custom_dict_append():

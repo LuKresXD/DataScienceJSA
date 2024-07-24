@@ -1,6 +1,5 @@
 import pytest
-from flask import Flask, request, jsonify
-from task3 import app, NotificationFactory
+from pythonTasks.task3 import app
 
 
 @pytest.fixture

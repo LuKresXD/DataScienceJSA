@@ -1,5 +1,5 @@
 import pytest
-from task2 import is_palindrome
+from pythonTasks.task2 import is_palindrome
 
 
 def test_is_palindrome():
